@@ -169,7 +169,7 @@ export const QuizzPage = () => {
         setShowAnswer(false);
       } else {
        
-        fetch('http://localhost:8000/api/sugerVideo', {
+        fetch('https://girlsbackend.onrender.com/api/sugerVideo', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
