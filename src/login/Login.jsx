@@ -63,7 +63,7 @@ const handleSave = (e) => {
           
         </section>
         <section style={{ backgroundColor: '#A3CAD8', display: "flex", justifyContent: "center", height: "10rem" }}>     
-          <img src="./src/assets/characters/loganCharacter.png" alt="" />
+          <img src="./loganCharacter.png" alt="" />
           <section >
             <h1 style={{color:"#FBFBFB", marginTop:"3rem"}}>Guardiões do Fogo </h1>
           </section>
@@ -73,7 +73,7 @@ const handleSave = (e) => {
             <label className="form-label" style={{ color: "#106780" }}>Usuario</label>
             <section style={styles.customSection}>
               <img
-                src="../src/assets/images/loginUser.png"
+                src="./loginUser.png"
                 style={styles.customImg}
                 alt="User Icon"
               />

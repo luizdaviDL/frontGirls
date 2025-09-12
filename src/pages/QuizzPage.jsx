@@ -249,7 +249,7 @@ export const QuizzPage = () => {
               }}>
               <div className="character" style={{marginTop:"2rem"}}>
                 <img
-                  src="../src/assets/characters/choicCharacter.png"
+                  src="./choicCharacter.png"
                   style={{ width: "8rem", height: "8rem" }}
                   alt="Personagem"
                 />

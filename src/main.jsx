@@ -9,7 +9,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import { ScorePage } from './pages/ScorePage'
 
 const text1 = `Preste muita atenção para você se lembrar de tudinho na proxima fase, combinado?`
-const imageIntrodution = "../src/assets/characters/introdutionCharacter.png" 
+const imageIntrodution = "./introdutionCharacter.png" 
 
 const router = createBrowserRouter([
   { 

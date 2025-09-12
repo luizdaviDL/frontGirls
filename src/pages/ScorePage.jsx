@@ -49,7 +49,7 @@ export const ScorePage = () => {
                 }}>
                     <div>
                     <section style={{display: "flex", justifyContent:"center"}}>
-                                <img src="../src/assets/characters/fineshCharacter.png" 
+                                <img src="./fineshCharacter.png" 
                             style={{ width: "10rem", height: "10rem", marginRight:"1rem" }}
                             alt="Personagem"
                             />
