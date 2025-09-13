@@ -39,7 +39,7 @@ const questions = [
     options: [
       "Tomar água gelada",
       "Pegar uma panela quente",      
-      "Pegar uma panela quente",
+      "Comer frutas no almoço",
       "Brincar no quintal"
     ],
     correctAnswerIndex: 1
