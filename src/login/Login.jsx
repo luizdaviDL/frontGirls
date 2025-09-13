@@ -62,6 +62,9 @@ const handleSave = (e) => {
               <h5 class="modal-title" id="exampleModalLabel">Informações do importantes</h5>              
             </div>
             <div class="modal-body">
+              <section style={{marginBottom:"1rem"}}>
+                <img src="./unameImage.jpg" style={{width:"8rem",height:"5rem"}} />
+              </section>
               Trabalho de Conclusão de Curso sobre “Educação em Saúde nas Escolas: conscientização 
               para a prevenção de queimaduras com recurso de inteligência artificial.”
                 <br/>
