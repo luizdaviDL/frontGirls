@@ -5,94 +5,94 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 const questions = [
   {
-    question: "O que é uma queimadura?",
+    question: "Quando a gente fala em queimadura, o que isso quer dizer?",
     options: [
-      "Um machucado causado por algo quente ou muito frio, como o fogo ou o gelo.",
-      "Um machucado feito por um espinho.",
-      "Um machucado que aparece quando a gente corre muito.",
-      "Uma doença que dá quando está muito frio."
-    ],
-    correctAnswerIndex: 0
-  },
-  {
-    question: "O que não fazer quando alguém se queima?",
-    options: [
-      "Passar manteiga ou pasta de dente.",
-      "Colocar a parte queimada em água corrente em temperatura ambiente.",
-      "Pedir ajuda a um adulto.",
-      "Levar a pessoa ao atendimento de saúde."
-    ],
-    correctAnswerIndex: 0
-  },
-  {
-    question: "Como prevenir (evitar) queimaduras em casa?",
-    options: [
-      "Ficar longe do fogão e objetos quentes.",
-      "Brincar com fósforos e velas.",
-      "Colocar a mão dentro do forno.",
-      "Encostar na panela quente para ver se está ligada."
-    ],
-    correctAnswerIndex: 0
-  },
-  {
-    question: "Você sabe o que pode causar uma queimadura?",
-    options: [
-      "Comer frutas e legumes.",
-      "Fogo, água quente ou o ferro de passar roupa.",      
-      "Tomar banho de chuva.",
-      "Dormir cedo."
-    ],
-    correctAnswerIndex: 1
-  },
-  {
-    question: "O que fazer imediatamente após uma queimadura?",
-    options: [      
-      "Esfregar com uma toalha.",
-      "Passar manteiga ou pasta de dente.",
-      "Colocar a parte queimada em água corrente durante 5 a 10 minutos.",
-      "Esconder o machucado e não contar para ninguém."
+      "É quando a gente se arranha com uma planta",
+      "É quando a gente escorrega no chão",
+      "É quando a pele fica machucada por algo quente ou gelado demais",
+      "É quando a gente sente frio e espirra"
     ],
     correctAnswerIndex: 2
   },
   {
-    question: "Quais os objetos em casa podem causar queimaduras?",
-    options: [      
-      "Sofá, travesseiro e cobertor.",
-      "Fogão, ferro de passar e panela quente.",
-      "Tapete, cortina e cadeira.",
-      "Cama, mesa e televisão desligada."
-    ],
-    correctAnswerIndex: 1
-  },
-  {
-    question: "Porque não devo estourar as bolhas da queimadura em casa?",
+    question: "Alguém se queimou! O que não é uma boa ideia fazer?",
     options: [
-      "Porque pode causar infecção e piorar o machucado.",
-      "Porque a bolha vai virar uma tatuagem.",
-      "Porque a bolha vai sumir em 5 minutos.",
-      "Porque o machucado desaparece se estourar."
+      "Passar pasta de dente no machucado",
+      "Colocar a mão queimada na água fria da torneira",
+      "Ir pro médico se for grave.",
+      "Pedir ajuda pra um adulto"
     ],
     correctAnswerIndex: 0
   },
   {
-    question: "O que você deve fazer se ficar preso em um quarto cheio de fumaça?",
-    options: [      
-      "Subir na cama e gritar bem alto.",
-      "Ficar abaixado e tentar sair do quarto.",
-      "Correr de um lado para o outro.",
-      "Esconder-se dentro do armário."
+    question: "O que a gente pode fazer pra não se queimar em casa?",
+    options: [
+      "Ficar longe de coisas quentes como o fogão",
+      "Botar o dedo perto do fogo pra brincar",
+      "Acender velas sozinho",
+      "Ficar mexendo nas panelas no fogão."
+    ],
+    correctAnswerIndex: 0
+  },
+  {
+    question: "Qual dessas coisas pode queimar você de verdade?",
+    options: [
+      "Tomar água gelada",
+      "Pegar uma panela quente",      
+      "Pegar uma panela quente",
+      "Brincar no quintal"
     ],
     correctAnswerIndex: 1
   },
   {
-    question: "O que você deve fazer se a sua roupa pegar fogo?",
-    options: [
-      "Parar, deitar no chão e rolar até o fogo apagar.",
-      "Correr bem rápido para chamar alguém.",
-      "Pular várias vezes até o fogo apagar.",
-      "Tentar tirar a roupa correndo."
+    question: "Você queimou a mão. O que deve fazer logo em seguida?",
+    options: [      
+      "Passar qualquer coisa da cozinha",
+      "Esconder o machucado da mamãe",
+      "Esfregar um pano no lugar",
+      "Colocar a mão queimada em água corrente por alguns minutos"
     ],
-    correctAnswerIndex: 0
+    correctAnswerIndex: 3
+  },
+  {
+    question: "O que pode causar queimadura se não tomar cuidado?",
+    options: [      
+      "Janela, escada e tapete",
+      "Cadeira, sofá e guarda-roupa",
+      "Fogão, ferro quente e forno ligado",
+      "Brinquedos, livros e travesseiros."
+    ],
+    correctAnswerIndex: 2
+  },
+  {
+    question: "Você viu uma bolha no machucado de queimadura. Pode estourar?",
+    options: [
+      "Sim, porque vai sair a dor",
+      "Claro, assim sara mais rápido",
+      "Não! Pode piorar e pegar bichinhos",
+      "Sim, porque é divertido"
+    ],
+    correctAnswerIndex: 2
+  },
+  {
+    question: "Se tem fumaça no quarto, o que você faz pra se proteger?",
+    options: [      
+      "Se esconde atrás da porta",
+      "Se abaixa e tenta sair com cuidado",
+      "Corre sem parar dentro do quarto",
+      "Sobe na cama pra gritar"
+    ],
+    correctAnswerIndex: 1
+  },
+  {
+    question: "Se sua roupa pegar fogo, qual é o certo a fazer?",
+    options: [
+      "Soprar o fogo até apagar",
+      "Tirar a roupa bem rápido",
+      "Correr pra alguém ver",
+      "Ficar parado e rolar no chão até apagar o fogo"
+    ],
+    correctAnswerIndex: 3
   }
 ];
 
