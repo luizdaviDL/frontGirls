@@ -12,27 +12,40 @@ export const ScorePage = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const scoreFromState = location.state?.scoreValue;
-    const hendlePage = location.state?.page;
-    const data = location.state.dataV;
 
-    const [score, setScore] = useState(0);
+    const [score, setScore] = useState(null); // inicializa com null
+    const [data, setData] = useState('');
 
     useEffect(() => {
+        // Primeiro tenta pegar do state do navigate
+        const scoreFromState = location.state?.scoreValue;
+        const dataFromState = location.state?.dataV;
+
         if (scoreFromState !== undefined) {
             setScore(scoreFromState);
+            sessionStorage.setItem('score', scoreFromState);
         } else {
-            // fallback: ler do sessionStorage
+            // fallback sessionStorage
             const savedScore = sessionStorage.getItem('score');
-            if (savedScore !== null) {
-                setScore(Number(savedScore));
-            }
+            if (savedScore !== null) setScore(Number(savedScore));
         }
-    }, [scoreFromState]);
+
+        if (dataFromState !== undefined) {
+            setData(typeof dataFromState === 'string' ? dataFromState : JSON.stringify(dataFromState));
+            sessionStorage.setItem('dataV', JSON.stringify(dataFromState));
+        } else {
+            const savedData = sessionStorage.getItem('dataV');
+            if (savedData) setData(JSON.parse(savedData));
+        }
+    }, [location.state]);
 
     const handleClick = () => {
+        sessionStorage.removeItem('score');
+        sessionStorage.removeItem('dataV');
         navigate("/");
     };
+
+    if (score === null) return null; // enquanto carrega, não renderiza nada
 
     return (
         <div>
@@ -48,10 +61,10 @@ export const ScorePage = () => {
                     boxShadow:"0 0 10px #434343"
                 }}>
                     <div>
-                    <section style={{display: "flex", justifyContent:"center"}}>
-                                <img src="./fineshCharacter.png" 
-                            style={{ width: "10rem", height: "10rem", marginRight:"1rem" }}
-                            alt="Personagem"
+                        <section style={{display: "flex", justifyContent:"center"}}>
+                            <img src="./fineshCharacter.png" 
+                                style={{ width: "10rem", height: "10rem", marginRight:"1rem" }}
+                                alt="Personagem"
                             />
                         </section>
                         <section style={{marginTop:"1rem"}}>
@@ -63,7 +76,6 @@ export const ScorePage = () => {
                                 <h4 style={{ minWidth: "11rem", marginRight: ".5rem" }}>Erros frequentes:</h4>
                                 <h4 style={{ color: "#575757", whiteSpace: "nowrap"}}>{data}</h4>
                             </section>
-
                         </section>
                     </div>
                 </div>
