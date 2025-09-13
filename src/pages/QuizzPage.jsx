@@ -182,6 +182,8 @@ export const QuizzPage = () => {
           console.log('Resposta da API:', data);
           setLoading(false);
           navigate('/score', { state: { scoreValue: score, dataV: data } });
+         // sessionStorage.setItem('dataV', JSON.stringify(data));
+
           sessionStorage.removeItem('score');
         })
         .catch(error => console.error('Erro ao enviar:', error))
