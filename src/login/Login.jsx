@@ -22,7 +22,7 @@ const handleSave = (e) => {
     setAlert("por favor, digite o nome do usuario");
   }
   else if(!selectedFase){
-    setAlert("por favor, Selecione a fase do jogo");
+    setAlert("por favor, selecione a fase do jogo");
   }else{
     navigate("/introducao", { state: { userNameV:  userName, fase: selectedFase} });
   }
@@ -53,22 +53,59 @@ const handleSave = (e) => {
 
   return (
     <div className='formSc' style={{ width: "30rem", height: "38rem",  border: "1px solid #adadadff", display:"flex", justifyContent:"center", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.2)", }}>
-      <form>
-        <section style={{display:"flex", justifyContent:"center", marginTop:".5rem"}}>
-          {alert &&
-            <div class="alert alert-danger" role="alert" style={{width:"19rem"}}>
-              {alert}
+
+      {/**modal */}
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Informações do importantes</h5>              
             </div>
-          }
-          
-        </section>
+            <div class="modal-body">
+              Trabalho de Conclusão de Curso sobre “Educação em Saúde nas Escolas: conscientização 
+              para a prevenção de queimaduras com recurso de inteligência artificial.”
+                <br/>
+                <strong>Acadêmicas de Enfermagem:</strong> <br />
+                Acsa Lino Geraldo <br />
+                Evellyn Luiza da Cruz Martins <br />
+                Sâmea Vitória Calazans de Araújo. <br />
+                <strong>Orientadora:</strong> <br /> Mayara Annanda Oliveira Neves Kimura
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">fechar</button>              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/**form */}
+      <form>
+        
         <section style={{ backgroundColor: '#A3CAD8', display: "flex", justifyContent: "center", height: "10rem" }}>     
           <img src="./loganCharacter.png" alt="" />
           <section >
             <h1 style={{color:"#FBFBFB", marginTop:"3rem"}}>Guardiões do Fogo </h1>
           </section>
         </section>
-        <section style={{ marginTop:"3rem",padding: "20px" }}>
+        <section style={{display:"flex", justifyContent:"center", marginTop:"1rem"}}>
+          {alert &&
+            <div class="alert alert-danger" role="alert" style={{width:"19rem"}}>
+              {alert}
+            </div>
+          }          
+        </section>
+
+        {/**btn modal */}
+        <section style={{display:"flex", justifyContent:"flex-end"}}>        
+          <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+            <img src="./info.png" style={{height:"2.5rem"}} />
+          </button>
+        </section>
+
+          {/** */}
+        <section style={{ marginTop:"-1.5rem",padding: "20px" }}>
           <div className="mb-3" style={{ marginTop: "1rem" }}>
             <label className="form-label" style={{ color: "#106780" }}>Usuario</label>
             <section style={styles.customSection}>

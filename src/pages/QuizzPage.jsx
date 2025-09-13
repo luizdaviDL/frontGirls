@@ -99,6 +99,7 @@ const questions = [
 export const QuizzPage = () => {
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
   const [answers, setAnswers] = useState([]);
   const savedIndex = Number(sessionStorage.getItem('currentIndex')) || 0;
   const [currentIndex, setCurrentIndex] = useState(savedIndex);
@@ -168,8 +169,8 @@ export const QuizzPage = () => {
         setSelectedOption(null);
         setShowAnswer(false);
       } else {
-       
-        fetch('https://girlsbackend.onrender.com/api/sugerVideo', {
+        setLoading(true); 
+        fetch('https://girlsbackend.onrender.com/api/score', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -182,8 +183,8 @@ export const QuizzPage = () => {
           navigate('/score', { state: { scoreValue: score, dataV: data } });
           sessionStorage.removeItem('score');
         })
-        .catch(error => console.error('Erro ao enviar:', error));
-
+        .catch(error => console.error('Erro ao enviar:', error))
+        .finally(() => setLoading(false));
       }
     }
  
@@ -226,6 +227,67 @@ export const QuizzPage = () => {
         </div>
       ) : ( */}
         <>
+
+          {loading && ( 
+            <>
+              <style>
+                {`
+                  @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                  }
+
+                  @keyframes pulse {
+                    0%   { transform: scale(1); }
+                    50%  { transform: scale(1.1); }
+                    100% { transform: scale(1); }
+                  }
+
+                  .fadeIn {
+                    animation: fadeIn 0.5s ease-in-out;
+                  }
+
+                  .pulseText {
+                    display: inline-block;
+                    animation: pulse 1.2s ease-in-out infinite;
+                  }
+                `}
+              </style>
+
+              <div
+                className="fadeIn"
+                style={{
+                  position: "fixed",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  background: "rgba(0,0,0,0.6)",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  color: "#fff",
+                  fontSize: "1.5rem",
+                  zIndex: 9999
+                }}
+              >
+                <div
+                  style={{
+                    background: "#222",
+                    padding: "2rem",
+                    borderRadius: "1rem",
+                    boxShadow: "0 0 20px rgba(0,0,0,0.5)",
+                    textAlign: "center"
+                  }}
+                >
+                  <h3 className="pulseText">Aguarde...</h3> <br />
+                  <p className="pulseText">Calculando sua pontuação</p>
+                </div>
+              </div>
+            </>
+          )} 
+
+
           <div
             className="container"
             style={{
