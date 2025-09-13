@@ -33,7 +33,7 @@ export const VideoPage = ({image, text}) => {
         <div>
             <div className="container">
                 <div style={{display:"flex", /*backgroundColor:"red",*/ height:"15rem", 
-                    marginTop: isMobile? "0": "5rem",
+                    marginTop: isMobile? "0": "1rem",
                     flexDirection: isMobile ? "column" : "row",
                     alignItems: isMobile ? "center" : "flex-start",
                 }}>
