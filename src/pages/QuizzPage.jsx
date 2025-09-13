@@ -178,8 +178,9 @@ export const QuizzPage = () => {
           body: JSON.stringify(answers),
         })
         .then(res => res.json())
-        .then(data => {
+        .then(data => {          
           console.log('Resposta da API:', data);
+          setLoading(false);
           navigate('/score', { state: { scoreValue: score, dataV: data } });
           sessionStorage.removeItem('score');
         })
